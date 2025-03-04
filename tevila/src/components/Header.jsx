@@ -20,7 +20,7 @@ export default function Header() {
           <Link to="/services" className="link">Servicios</Link>
         </nav>
 
-        <button className="cta">Solicitar Servicio</button>
+        <Link className="cta">Solicitar Servicio</Link>
 
         <button className="menu-button" onClick={toggleMenu}>
           {isOpen ? "x" : "☰"}

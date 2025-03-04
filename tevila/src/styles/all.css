@@ -1,0 +1,72 @@
+
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+
+  .h1 {
+    font-size: 2rem;
+    color: var(--primary); 
+  }
+  
+ 
+  .whatsapp-button {
+    background-color: #25D366; 
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #128C7E; 
+    scale: 1.1;
+  }
+  
+  .div-all {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea si no hay espacio */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espaciado entre los elementos */
+    margin: 20px;
+  }
+  
+  /* Estilo de cada componente dentro del contenedor */
+  .div-all > * {
+    flex: 1 1 350px; /* Los elementos pueden crecer, encogerse y tienen un ancho base de 200px */
+    min-width: 350px; /* Asegura que los elementos no sean más pequeños que 200px */
+  }
+  .whatsapp-button {
+    background-color: #25D366; 
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    max-height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    align-self: center;
+  }
+  
+
+ .son {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
