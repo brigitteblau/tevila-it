@@ -1,6 +1,6 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
-
+import Faq from "../components/Faq"
 import "../styles/home.css";
 export default function Home() {
     return(<>
@@ -36,32 +36,9 @@ export default function Home() {
       </div>
     </div>
     <section>
-      <h2>THIS IS HOW I CAN HELP YOU</h2>
-      <div>Image</div>
-      <input type="text" placeholder="Input field" />
-      <input type="text" placeholder="Input field" />
-      <button>CTA</button>
+     <Faq/>
     </section>
-    <section>
-      <h2>THESE ARE MY SERVICES</h2>
-      <div className="services">
-        <div>
-          <div>Image</div>
-          <p>Mini explanation on service</p>
-          <button>CTA</button>
-        </div>
-        <div>
-          <div>Image</div>
-          <p>Mini explanation on service</p>
-          <button>CTA</button>
-        </div>
-        <div>
-          <div>Image</div>
-          <p>Mini explanation on service</p>
-          <button>CTA</button>
-        </div>
-      </div>
-    </section>
+
     </>
     )
   
