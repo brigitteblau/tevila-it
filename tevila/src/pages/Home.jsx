@@ -1,6 +1,7 @@
 import { React } from "react";
 import { Link } from "react-router-dom";
-import Faq from "../components/Faq"
+import Faq from "../components/Faq";
+import All from "./All"
 import "../styles/home.css";
 export default function Home() {
     return(<>
@@ -38,7 +39,7 @@ export default function Home() {
     <section>
      <Faq/>
     </section>
-
+<All/>
     </>
     )
   
