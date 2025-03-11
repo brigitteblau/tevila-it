@@ -1,15 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles/header.css";
 
 export default function Header() {
   return (
+<>
     <header className="header">
+      <div className="ti">
       <img src="img/logo.svg" alt="Tevila It Logo" className="logo" />
-      <div className="header-curve"></div>
+
+      </div>
+   
     </header>
+       <div className="header-curve"></div>
+       </>
   );
 }
+
   // const [isOpen, setIsOpen] = useState(false);
 
   // const toggleMenu = () => setIsOpen(!isOpen);
