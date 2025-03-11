@@ -8,24 +8,28 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="header">
-      <div className="container">
-      <Link to="/" className="logo">  <h1 className="logo">Tevila It</h1></Link>
+    // <header className="header">
+    //   <div className="container">
+    //   <Link to="/" className="logo">  <h1 className="logo">Tevila It</h1></Link>
       
 
-        <nav className={`nav ${isOpen ? "open" : ""}`}>
-          <Link to="/" className="link">Inicio</Link>
-          <Link to="/about" className="link">Sobre Nosotros</Link>
-          <Link to="/contact" className="link">Contacto</Link>
-          <Link to="/services" className="link">Servicios</Link>
-        </nav>
+    //     <nav className={`nav ${isOpen ? "open" : ""}`}>
+    //       <Link to="/" className="link">Inicio</Link>
+    //       <Link to="/about" className="link">Sobre Nosotros</Link>
+    //       <Link to="/contact" className="link">Contacto</Link>
+    //       <Link to="/services" className="link">Servicios</Link>
+    //     </nav>
 
-        <Link className="cta">Solicitar Servicio</Link>
+    //     <Link className="cta">Solicitar Servicio</Link>
 
-        <button className="menu-button" onClick={toggleMenu}>
-          {isOpen ? "x" : "☰"}
-        </button>
-      </div>
+    //     <button className="menu-button" onClick={toggleMenu}>
+    //       {isOpen ? "x" : "☰"}
+    //     </button>
+    //   </div>
+    // </header>
+    <header className="header">
+      <img src="/logo.png" alt="Tevila It Logo" className="logo" />
+      <div className="header-curve"></div>
     </header>
   );
 }

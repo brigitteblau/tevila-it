@@ -12,17 +12,9 @@ export default function Home() {
       <div className="hero-content">
         <h1 className="hero-title">Tevila It</h1>
         
-        {/* <div className="hero-tagline-container">
-          <span className="hero-tagline">
-            Pasamos a buscar tu vajilla
-          </span>
-          <span className="hero-tagline">
-            Puestos para ayudar
-          </span>
-        </div> */}
-        
+      
         <p className="hero-description">
-       Ayudamos a que hacer tevila sea mas satifactorio para vos!. Recogemos, llevamos y entregamos 
+       Ayudamos a que hacer tevila sea mas satifactorio para vos! Recogemos, llevamos y entregamos 
           tu vajilla con la máxima higiene y cuidado.
         </p>
         

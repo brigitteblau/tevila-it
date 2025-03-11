@@ -1,5 +1,6 @@
 :root {
   /* colores */
+  --backgorund-main: background: linear-gradient(180deg, #28B5D8 0%, #0CACE0 52%, #107BB6 100%);
   --primary: #73cdd9;  
   --secondary: #99e2eb;
   --accent: #4dd0e1;  
