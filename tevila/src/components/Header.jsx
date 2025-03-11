@@ -1,14 +1,19 @@
-import { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   return (
-    // <header className="header">
+    <header className="header">
+      <img src="img/logo.svg" alt="Tevila It Logo" className="logo" />
+      <div className="header-curve"></div>
+    </header>
+  );
+}
+  // const [isOpen, setIsOpen] = useState(false);
+
+  // const toggleMenu = () => setIsOpen(!isOpen);
+ // <header className="header">
     //   <div className="container">
     //   <Link to="/" className="logo">  <h1 className="logo">Tevila It</h1></Link>
       
@@ -27,9 +32,3 @@ export default function Header() {
     //     </button>
     //   </div>
     // </header>
-    <header className="header">
-      <img src="/logo.png" alt="Tevila It Logo" className="logo" />
-      <div className="header-curve"></div>
-    </header>
-  );
-}
