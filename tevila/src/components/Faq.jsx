@@ -1,6 +1,6 @@
 import { useState } from "react";
 import data from "../data/questions";
-
+import "../styles/faq.css"
 function Faq() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -17,14 +17,20 @@ function Faq() {
             {category.preguntas.map((faq, index) => (
               <div key={index} className="faq-item">
                 <button
-                  className="faq-question"
+                  className={`faq-question ${openIndex === `${catIndex}-${index}` ? "open" : ""}`}
                   onClick={() => toggleFaq(`${catIndex}-${index}`)}
                 >
                   {faq.pregunta}
+                  <img
+                    src="/img/down.svg"
+                    alt="arrow"
+                  />
                 </button>
-                {openIndex === `${catIndex}-${index}` && (
-                  <p className="faq-answer">{faq.respuesta}</p>
-                )}
+                <p
+                  className={`faq-answer ${openIndex === `${catIndex}-${index}` ? "open" : ""}`}
+                >
+                  {faq.respuesta}
+                </p>
               </div>
             ))}
           </div>

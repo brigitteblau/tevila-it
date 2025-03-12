@@ -81,6 +81,20 @@ const Form = () => {
       )}
       
       <form onSubmit={handleSubmit}>
+      <div className="form-group">
+          <label className="form-label" htmlFor="name">Nombre:</label>
+          <input
+            className="form-input"
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            disabled={isLoading}
+            placeholder='Juan Perez'
+          />
+        </div>
       {/* form-group--required */}
         <div className="form-group">
           <label className="form-label" htmlFor="email">Email:</label>
@@ -93,45 +107,11 @@ const Form = () => {
             onChange={handleChange}
             required
             disabled={isLoading}
+            placeholder='ejemplo@gmail.com'
           />
         </div>
-        {/* form-group--required */}
-        <div className="form-group">
-          <label className="form-label" htmlFor="name">Nombre:</label>
-          <input
-            className="form-input"
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            disabled={isLoading}
-          />
-        </div>
-        {/* form-group--required */}
-        <div className="form-group">
-  <label className="form-label">¿Tenemos que pasar a buscar la vajilla?</label>
-  <div className="button-group">
-    <button
-      type="button"
-      className={`option-button ${formData.pickupVajilla === 'sí' ? 'selected' : ''}`}
-      onClick={() => setFormData({ ...formData, pickupVajilla: 'sí' })}
-      disabled={isLoading}
-    >
-      Sí
-    </button>
-    <button
-      type="button"
-      className={`option-button ${formData.pickupVajilla === 'no' ? 'selected' : ''}`}
-      onClick={() => setFormData({ ...formData, pickupVajilla: 'no' })}
-      disabled={isLoading}
-    >
-      No
-    </button>
-  </div>
-</div>
-
+      
+     
         <div className="form-group">
           <label className="form-label form-group--required" htmlFor="phone">Teléfono:</label>
           <input
@@ -142,6 +122,7 @@ const Form = () => {
             value={formData.phone}
             onChange={handleChange}
             disabled={isLoading}
+            placeholder='549XXXXXXXXXX'
           />
         </div>
         <div className="form-group">
@@ -167,7 +148,7 @@ const Form = () => {
 </div>
 
         <div className="form-group">
-          <label className="form-label" htmlFor="message">Algo que nos queiras decir:</label>
+          <label className="form-label" htmlFor="message">Detalles</label>
           <textarea
             className="form-textarea"
             id="message"
@@ -175,13 +156,14 @@ const Form = () => {
             value={formData.message}
             onChange={handleChange}
             disabled={isLoading}
+            placeholder='consulta, cantidad de vajilla, comentario etc'
           />
         </div>
 
       
 
-  
-        <button 
+  <div className='submit-div'>
+  <button 
           className="submit-button" 
           type="submit" 
           disabled={isLoading}
@@ -195,6 +177,8 @@ const Form = () => {
             'Enviar'
           )}
         </button>
+  </div>
+
   
       </form>
     </div>
