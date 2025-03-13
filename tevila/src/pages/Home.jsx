@@ -6,8 +6,26 @@ import Form from "./Form"
 import About from "./About"
 import "../styles/home.css";
 export default function Home() {
-    return(<>
- 
+  const slowScroll = (targetId) => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    let currentScroll = window.scrollY;
+    const targetScroll = target.getBoundingClientRect().top + currentScroll;
+    const step = (targetScroll - currentScroll) / 50; // Ajusta el número de pasos para mayor suavidad
+
+    const scrollInterval = setInterval(() => {
+      if (Math.abs(window.scrollY - targetScroll) < Math.abs(step)) {
+        window.scrollTo(0, targetScroll);
+        clearInterval(scrollInterval);
+      } else {
+        window.scrollBy(0, step);
+      }
+    }, 10); // Ajusta el tiempo entre pasos para hacerlo más lento o rápido
+  };
+
+  return (
+ <>
  <div className="hero-content">    
   <div className="sta">
   <p className="hero-description">
@@ -15,15 +33,15 @@ export default function Home() {
   </p>
   <p className="desp">Nos encargamos de recoger, llevar y entregar tu vajilla</p>
   <div className="div-button">
+  <button
+  className="button"
+  onClick={() => slowScroll("faq-section")}
+>
+  Preguntas Frecuentes
+</button>
     <button
-      className="button"
-      onClick={() => document.getElementById("faq-section").scrollIntoView({ behavior: "smooth" })}
-    >
-      Preguntas Frecuentes
-    </button>
-    <button
-      className="button"
-      onClick={() => document.getElementById("do-section").scrollIntoView({ behavior: "smooth" })}
+      className="button b"
+      onClick={() => slowScroll("do-section")}
     >
       Pedí tu servicio
     </button>
@@ -42,10 +60,11 @@ export default function Home() {
 <section id="faq-section">
   <Faq />
 </section>
+<About/>
 <section id="do-section">
 <Form />
 </section>
-<About/>
+
     </>
     )
   

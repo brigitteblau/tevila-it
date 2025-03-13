@@ -40,7 +40,7 @@ const Form = () => {
       .then(() => {
         setPopup({
           show: true,
-          message: `Muchas gracias por confiar en nosotros, pronto nos estaremos comunciando asi arreglamos lo mejor para usted!.`,
+          message: `Información procesada! <br> Muchas gracias por confiar en nosotros, pronto nos estaremos comunciando asi arreglamos lo mejor para usted!.`,
           type: 'success'
         });
   
@@ -73,97 +73,99 @@ const Form = () => {
 
   return (
     <div className="form-container">
-      {popup.show && (
-        <Popup 
-          message={popup.message} 
-          onClose={closePopup}
-        />
-      )}
-      
-      <form onSubmit={handleSubmit}>
+    {/* Título llamativo */}
+    <h2 className="form-title">Completa este formulario para ponernos en contacto</h2>
+    
+    {popup.show && (
+      <Popup 
+        message={popup.message} 
+        onClose={closePopup}
+      />
+    )}
+  
+    <form onSubmit={handleSubmit}>
       <div className="form-group">
-          <label className="form-label" htmlFor="name">Nombre:</label>
-          <input
-            className="form-input"
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
+        <label className="form-label" htmlFor="name">Nombre:</label>
+        <input
+          className="form-input"
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          disabled={isLoading}
+          placeholder="David Cohen"
+        />
+      </div>
+  
+      <div className="form-group">
+        <label className="form-label" htmlFor="email">Email:</label>
+        <input
+          className="form-input"
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          disabled={isLoading}
+          placeholder="ejemplo@gmail.com"
+        />
+      </div>
+  
+      <div className="form-group">
+        <label className="form-label" htmlFor="phone">Teléfono:</label>
+        <input
+          className="form-input"
+          type="tel"
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          disabled={isLoading}
+          placeholder="549XXXXXXXXXX"
+        />
+      </div>
+  
+      <div className="form-group">
+        <label className="form-label">¿Cómo prefieres ser contactado?</label>
+        <div className="button-group">
+          <button
+            type="button"
+            className={`option-button ${formData.contactPreference === 'email' ? 'selected' : ''}`}
+            onClick={() => setFormData({ ...formData, contactPreference: 'email' })}
             disabled={isLoading}
-            placeholder='Juan Perez'
-          />
-        </div>
-      {/* form-group--required */}
-        <div className="form-group">
-          <label className="form-label" htmlFor="email">Email:</label>
-          <input
-            className="form-input"
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
+          >
+            Email
+          </button>
+          <button
+            type="button"
+            className={`option-button ${formData.contactPreference === 'phone' ? 'selected' : ''}`}
+            onClick={() => setFormData({ ...formData, contactPreference: 'phone' })}
             disabled={isLoading}
-            placeholder='ejemplo@gmail.com'
-          />
+          >
+            Teléfono
+          </button>
         </div>
-      
-     
-        <div className="form-group">
-          <label className="form-label form-group--required" htmlFor="phone">Teléfono:</label>
-          <input
-            className="form-input"
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            disabled={isLoading}
-            placeholder='549XXXXXXXXXX'
-          />
-        </div>
-        <div className="form-group">
-  <label className="form-label form-group--required">¿Cómo prefieres ser contactado?</label>
-  <div className="button-group">
-    <button
-      type="button"
-      className={`option-button ${formData.contactPreference === 'email' ? 'selected' : ''}`}
-      onClick={() => setFormData({ ...formData, contactPreference: 'email' })}
-      disabled={isLoading}
-    >
-      Email
-    </button>
-    <button
-      type="button"
-      className={`option-button ${formData.contactPreference === 'phone' ? 'selected' : ''}`}
-      onClick={() => setFormData({ ...formData, contactPreference: 'phone' })}
-      disabled={isLoading}
-    >
-      Teléfono
-    </button>
-  </div>
-</div>
-
-        <div className="form-group">
-          <label className="form-label" htmlFor="message">Detalles</label>
-          <textarea
-            className="form-textarea"
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            disabled={isLoading}
-            placeholder='consulta, cantidad de vajilla, comentario etc'
-          />
-        </div>
-
-      
-
-  <div className='submit-div'>
-  <button 
+      </div>
+  
+      <div className="form-group">
+        <label className="form-label" htmlFor="message">Detalles:</label>
+        <textarea
+          className="form-textarea"
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          disabled={isLoading}
+          placeholder="Consulta, cantidad de vajilla, comentario, etc."
+        />
+      </div>
+  
+      {/* Botón Enviar */}
+      <div className="submit-div">
+        <button 
           className="submit-button" 
           type="submit" 
           disabled={isLoading}
@@ -177,11 +179,12 @@ const Form = () => {
             'Enviar'
           )}
         </button>
-  </div>
-
+      </div>
+    </form>
   
-      </form>
-    </div>
+   
+  </div>
+  
   );
 };
 
