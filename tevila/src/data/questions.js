@@ -16,7 +16,7 @@ const data = [
         },
         {
           pregunta: "¿Cuánto tarda el proceso?",
-          respuesta: "Depende de la cantidad de utensilios y la demanda, pero solemos completarlo en un máximo de 24 a 48 horas hábiles."
+          respuesta: "Depende de la cantidad de utensilios y la demanda, pero nuestro ideal es completarlo entre 3 a 7 días."
         }
       ]
     },
@@ -38,7 +38,7 @@ const data = [
       ]
     },
     {
-      categoria: " Sobre la aHalaja",
+      categoria: " Sobre la Halaja",
       preguntas: [
         {
           pregunta: "¿Siempre hay que decir una brajá antes de la tevila?",
