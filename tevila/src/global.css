@@ -21,3 +21,14 @@
     font-family: 'Poppins', sans-serif;
      background: linear-gradient(180deg, #28B5D8 0%, #0CACE0 52%, #107BB6 100%);    ;
   }
+
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('/fonts/fonts.woff2') format('woff2'),
+      url('/fonts/fonts2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+

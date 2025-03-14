@@ -18,7 +18,9 @@ function Faq() {
               <img src={category.imagen} alt={category.categoria} className="faq-image" />
               <div className="faq-overlay">
                 <h2 className="faq-category-title">{category.categoria}</h2>
-                <img
+              </div>
+              <div className="arrow-over">
+              <img
                   src="/img/down.svg"
                   alt="arrow"
                   className={`faq-arrow ${openCategory === index ? "open" : ""}`}

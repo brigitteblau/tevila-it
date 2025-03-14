@@ -27,7 +27,7 @@ export default function Header() {
     <header className="header">
       <div className="header-container">
         <div className="ti">
-          <img src="img/logo.svg" alt="Tevila It Logo" className="logo" />
+          <img src="img/logos/logo.png" alt="Tevila It Logo" className="logo" />
         </div>
 
 <div className="menu-div">

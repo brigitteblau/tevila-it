@@ -1,264 +1,191 @@
-/* .form-container {
-  margin: 40px auto;
-  padding: 30px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
-  width: 90%;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  position: relative;
+/* Estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 }
 
+
+
+/* Estilo del contenedor del formulario */
+.form-container {
+  display: flex;
+  flex-direction: column;
+
+  align-self: center;
+  justify-self: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Título del formulario */
 .form-title {
   font-size: 20px;
-  font-weight: bold;
-  text-align: center;
+  color: #0076c8;
   margin-bottom: 20px;
-  color: #0d6481;
-  letter-spacing: 1px;
+  font-weight: bold;
 }
 
+/* Estilos del grupo de campos */
 .form-group {
   margin-bottom: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  text-align: left;
 }
 
+/* Etiquetas de los campos */
 .form-label {
-  color:#0d6481;
-  font-weight: bold;
-  margin-bottom: 6px;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 8px;
+  display: block;
 }
 
-.form-input,
-.form-select,
-.form-textarea {
+/* Estilos de los inputs y textarea */
+.form-input, .form-textarea {
   width: 100%;
-  padding: 14px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 2px solid #0d6481;
-  border-radius: 10px;
-  font-size: 16px;
-  color: #23242a;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  box-shadow: 0px 0px 10px rgba(12, 172, 224, 0.5);
-  border-color: #0CACE0;
-}
-
-
-.submit-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.submit-button {
-  width: 100%;
-  max-width: 320px;
-  padding: 16px;
-  background: linear-gradient(90deg, #28B5D8 0%, #0CACE0 52%, #107BB6 100%);
-  box-shadow: 0px 8px 16px rgba(12, 172, 224, 0.7);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
-
-}
-
-.submit-button:hover {
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  transform: scale(1.05);
-  box-shadow: 0px 12px 20px rgba(12, 172, 224, 0.8);
-}
-
-.button-group{
-  display: flex;
-  justify-content: space-around;
-}
-.option-button {
-  padding: 2% 6%;
-  border: 2px solid #28B5D8;
-  background: rgba(255, 255, 255, 0.8);
-  color: #107BB6;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-
-  outline: none;
-}
-
-.option-button:hover {
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  background: #28B5D8;
-  color: white;
-  transform: scale(1.1);
-}
-
-.option-button.selected {
-  background: linear-gradient(90deg, #28B5D8 0%, #0CACE0 52%, #107BB6 100%);
-  color: white;
-  box-shadow: 0px 4px 10px rgba(12, 172, 224, 0.5);
-} */
-
-.form-container {
-  margin: 5vh auto;
-  padding: 2rem;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
-  width: 90%;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  position: relative;
-}
-
-/* --- Adaptable a pantallas grandes --- */
-@media screen and (min-width: 1024px) {
-  .form-container {
-    max-width: 600px;
-    padding: 2.5rem;
-  }
-}
-
-/* --- Nuevo: Título --- */
-.form-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #0d6481;
-  letter-spacing: 1px;
-}
-
-.form-group {
-  margin-bottom: 1.25rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-label {
-  color:#0d6481;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  padding: 12px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
 }
 
-.form-input,
-.form-select,
-.form-textarea {
-  width: 100%;
-  padding: 0.9rem;
-  background: rgba(255, 255, 255, 0.8);
-  border: 2px solid #0d6481;
-  border-radius: 10px;
-  font-size: 1rem;
-  color: #23242a;
+/* Efecto al enfocarse */
+.form-input:focus, .form-textarea:focus {
+  border-color: #0076c8;
   outline: none;
-  transition: all 0.3s ease-in-out;
 }
 
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  box-shadow: 0px 0px 10px rgba(12, 172, 224, 0.5);
-  border-color: #0CACE0;
-}
-
-/* --- Submit Button --- */
-.submit-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.submit-button {
-  width: 100%;
-  max-width: 320px;
-  padding: 1rem;
-  background: linear-gradient(90deg, #28B5D8 0%, #0CACE0 52%, #107BB6 100%);
-  box-shadow: 0px 8px 16px rgba(12, 172, 224, 0.7);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.125rem;
-  font-weight: bold;
-}
-
-.submit-button:hover {
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  transform: scale(1.05);
-  box-shadow: 0px 12px 20px rgba(12, 172, 224, 0.8);
-}
-
-/* --- Botones de opciones --- */
+/* Estilos de los botones */
 .button-group {
   display: flex;
   justify-content: space-around;
-  gap: 10px;
-  width: 100%;
-  flex-wrap: wrap;
 }
 
 .option-button {
-  padding: 0.5rem 1.5rem;
-  border: 2px solid #28B5D8;
-  background: rgba(255, 255, 255, 0.8);
-  color: #107BB6;
+  background: linear-gradient(45deg, #000000 0%, #707070 100%);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-align: center;
+  border-radius: 30px;
+  border: 3px #fff solid ;
+
+  box-shadow: 0px 12px 10px -8px #85BDD7E0;
+
   font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  outline: none;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s;
 }
 
 .option-button:hover {
   cursor: pointer;
-  background: #28B5D8;
-  color: white;
-  transform: scale(1.1);
+  box-shadow: 0px 8px 12px  #85BDD7E0 ;
 }
 
 .option-button.selected {
-  background: linear-gradient(90deg, #28B5D8 0%, #0CACE0 52%, #107BB6 100%);
-  color: white;
-  box-shadow: 0px 4px 10px rgba(12, 172, 224, 0.5);
+  box-shadow: 0px 8px 12px  #85BDD7E0 ;
 }
 
-/* --- Ajustes para móviles pequeños --- */
-@media screen and (max-width: 480px) {
-  .form-container {
-    width: 95%;
-    padding: 1rem;
-  }
+.submit-div {
+  margin-top: 20px;
+}
 
-  .submit-button {
-    font-size: 1rem;
-    padding: 0.9rem;
-  }
+.submit-button {
+  background: linear-gradient(80.54deg, #1089D3 0%, #12B1D1 100%);
+  color: white;
+  padding: 12px 20px;
+  box-shadow: 0px 20px 10px -15px #85BDD7E0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+  width: 100%;
+}
 
-  .option-button {
-    font-size: 0.9rem;
-    padding: 0.4rem 1.2rem;
-  }
+.submit-button:hover {
+cursor: pointer;
+transform: scale(1.1);
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Estilo del popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup .popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+}
+
+.popup .popup-content.success {
+  border: 2px solid #28a745;
+}
+
+.popup .popup-content.error {
+  border: 2px solid #dc3545;
+}
+
+.popup .popup-content h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.popup .popup-content p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Loader durante el envío */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #0076c8;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
