@@ -1,6 +1,7 @@
 const data = [
     {
       categoria: "Sobre el servicio",
+      imagen: "/img/faq/servicio.jpeg",
       preguntas: [
         {
           pregunta: "¿Cómo funciona Tevila It?",
@@ -22,6 +23,7 @@ const data = [
     },
     {
       categoria: "Sobre los utensilios",
+            imagen: "/img/faq/utensillos.png",
       preguntas: [
         {
           pregunta: "¿Qué utensilios necesitan tevila?",
@@ -39,6 +41,7 @@ const data = [
     },
     {
       categoria: " Sobre la Halaja",
+            imagen: "/img/faq/halaja.jpg",
       preguntas: [
         {
           pregunta: "¿Siempre hay que decir una brajá antes de la tevila?",
@@ -48,6 +51,7 @@ const data = [
     },
     {
       categoria: "Sobre la logistica",
+            imagen: "/img/faq/logistica.jpg",
       preguntas: [
         {
           pregunta: "¿El servicio tiene costo?",

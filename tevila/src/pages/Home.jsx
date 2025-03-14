@@ -1,3 +1,4 @@
+//pages/home
 import { React } from "react";
 import { Link } from "react-router-dom";
 import Faq from "../components/Faq";
@@ -25,47 +26,39 @@ export default function Home() {
   };
 
   return (
- <>
- <div className="hero-content">    
-  <div className="sta">
-  <p className="hero-description">
-    Hacemos que la tevila sea más satisfactoria para vos con la máxima higiene y cuidado.
-  </p>
-  <p className="desp">Nos encargamos de recoger, llevar y entregar tu vajilla</p>
-  <div className="div-button">
-  <button
-  className="button"
-  onClick={() => slowScroll("faq-section")}
->
-  Preguntas Frecuentes
-</button>
-    <button
-      className="button b"
-      onClick={() => slowScroll("do-section")}
-    >
-      Pedí tu servicio
-    </button>
-
+<>
+<section id="home-section">
+  <div className="hero-content">
+    <div className="sta">
+      <p className="hero-description">
+        Hacemos que la tevila sea más satisfactoria para vos con la máxima higiene y cuidado.
+      </p>
+      <p className="desp">Nos encargamos de recoger, llevar y entregar tu vajilla</p>
+      <div className="div-button">
+        <button className="button b" onClick={() => slowScroll("do-section")}>
+          Pedí tu servicio
+        </button>
+      </div>
+    </div>
   </div>
-    </div>    
-
-
-</div>
-<div className="scroll-arrow">
-  <img src="img/down.svg" alt="flecha" className="flecha" />
-  </div>
-<section>
-<Review/>
 </section>
+
 <section id="faq-section">
   <Faq />
 </section>
-<About/>
-<section id="do-section">
-<Form />
+
+<section id="about-section">
+  <About />
 </section>
 
-    </>
+<section id="services-section">
+  <Review />
+</section>
+
+<section id="do-section">
+  <Form />
+</section>
+</>
     )
   
 

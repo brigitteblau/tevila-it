@@ -1,39 +1,41 @@
 import { useState } from "react";
 import data from "../data/questions";
-import "../styles/faq.css"
-function Faq() {
-  const [openIndex, setOpenIndex] = useState(null);
+import "../styles/faqs.css";
 
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+function Faq() {
+  const [openCategory, setOpenCategory] = useState(null);
+
+  const toggleCategory = (index) => {
+    setOpenCategory(openCategory === index ? null : index);
   };
 
   return (
     <div className="faq-container">
-      {data.map((category, catIndex) => (
-        <div key={catIndex} className="faq-category">
-          <h2>{category.categoria}</h2>
-          <div className="faq-list">
-            {category.preguntas.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <button
-                  className={`faq-question ${openIndex === `${catIndex}-${index}` ? "open" : ""}`}
-                  onClick={() => toggleFaq(`${catIndex}-${index}`)}
-                >
-                  {faq.pregunta}
-                  <img
-                    src="/img/down.svg"
-                    alt="arrow"
-                  />
-                </button>
-                <p
-                  className={`faq-answer ${openIndex === `${catIndex}-${index}` ? "open" : ""}`}
-                >
-                  {faq.respuesta}
-                </p>
+      {data.map((category, index) => (
+        <div key={index} className="faq-category">
+          <div className="faq-header" onClick={() => toggleCategory(index)}>
+            <div className="faq-image-container">
+              <img src={category.imagen} alt={category.categoria} className="faq-image" />
+              <div className="faq-overlay">
+                <h2 className="faq-category-title">{category.categoria}</h2>
+                <img
+                  src="/img/down.svg"
+                  alt="arrow"
+                  className={`faq-arrow ${openCategory === index ? "open" : ""}`}
+                />
               </div>
-            ))}
+            </div>
           </div>
+          {openCategory === index && (
+            <div className="faq-list">
+              {category.preguntas.map((faq, idx) => (
+                <div key={idx} className="faq-item">
+                  <p className="faq-question">{faq.pregunta}</p>
+                  <p className="faq-answer">{faq.respuesta}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       ))}
     </div>
