@@ -12,7 +12,7 @@ const Footer = () => {
               <Link to="https://www.jabad.org" target="_blank" rel="noopener noreferrer">
                 <img src="logo-jabad.png" alt="Jabad" className="community-logo" />
               </Link>
-              <Link to="https://" target="_blank" rel="noopener noreferrer">
+              <Link to="https://www.jabad.org" target="_blank" rel="noopener noreferrer">
                 <img src="logo-aieka.png" alt="Aieka" className="community-logo" />
               </Link>
               <Link to="https://www.menora.org" target="_blank" rel="noopener noreferrer">

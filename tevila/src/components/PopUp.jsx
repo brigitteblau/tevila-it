@@ -11,6 +11,7 @@ const Popup = ({ message, onClose }) => {
           </button>
         </div> 
         <div className="popup-message" dangerouslySetInnerHTML={{ __html: message }} />
+        <img src='/img/logos/logo.png'/>
       </div>
     </div>
   );

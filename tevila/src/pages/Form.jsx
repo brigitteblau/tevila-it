@@ -40,7 +40,7 @@ const Form = () => {
       .then(() => {
         setPopup({
           show: true,
-          message: `Información procesada! <br> Muchas gracias por confiar en nosotros, pronto nos estaremos comunciando asi arreglamos lo mejor para usted!.`,
+          message: `Información procesada! <br> Pronto nos estaremos comunciando asi arreglamos lo mejor para usted!`,
           type: 'success'
         });
   
@@ -72,6 +72,7 @@ const Form = () => {
   };
 
   return (
+  <div className="form-com"> 
     <div className="form-container">
     {/* Título llamativo */}
     <h2 className="form-title">Completa este formulario para ponernos en contacto</h2>
@@ -184,7 +185,8 @@ const Form = () => {
   
    
   </div>
-  
+
+  </div>
   );
 };
 
