@@ -1,22 +1,23 @@
-/* Estilos globales */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 
+
+/* Contenedor principal responsive */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 15px;
+  background-color: #f5f5f5;
 }
-
-
 
 /* Estilo del contenedor del formulario */
 .form-container {
   display: flex;
   flex-direction: column;
-
   align-self: center;
   justify-self: center;
   background-color: #fff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
@@ -26,7 +27,7 @@
 
 /* Título del formulario */
 .form-title {
-  font-size: 20px;
+  font-size: 18px;
   color: #0076c8;
   margin-bottom: 20px;
   font-weight: bold;
@@ -34,23 +35,23 @@
 
 /* Estilos del grupo de campos */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-align: left;
 }
 
 /* Etiquetas de los campos */
 .form-label {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: block;
 }
 
 /* Estilos de los inputs y textarea */
 .form-input, .form-textarea {
   width: 100%;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 10px;
+  font-size: 16px; /* Mejor tamaño para móviles */
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 5px;
@@ -67,53 +68,57 @@
 /* Estilos de los botones */
 .button-group {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
+  justify-content: center;
+  gap: 10px; /* Espacio entre botones */
 }
 
 .option-button {
   background: linear-gradient(45deg, #000000 0%, #707070 100%);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   text-align: center;
   border-radius: 30px;
-  border: 3px #fff solid ;
-
-  box-shadow: 0px 12px 10px -8px #85BDD7E0;
-
-  font-size: 1rem;
-  transition: background-color 0.3s;
+  border: 3px #fff solid;
+  box-shadow: 0px 8px 8px -6px #85BDD7E0;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  flex: 1 0 auto; /* Permite que los botones crezcan proporcionalmente */
+  min-width: 100px; /* Establece un ancho mínimo */
+  margin-bottom: 5px;
 }
 
 .option-button:hover {
   cursor: pointer;
-  box-shadow: 0px 8px 12px  #85BDD7E0 ;
+  box-shadow: 0px 8px 12px #85BDD7E0;
 }
 
 .option-button.selected {
-  box-shadow: 0px 8px 12px  #85BDD7E0 ;
+  box-shadow: 0px 8px 12px #85BDD7E0;
 }
 
 .submit-div {
   margin-top: 20px;
+  width: 100%;
 }
 
 .submit-button {
   background: linear-gradient(80.54deg, #1089D3 0%, #12B1D1 100%);
   color: white;
   padding: 12px 20px;
-  box-shadow: 0px 20px 10px -15px #85BDD7E0;
+  box-shadow: 0px 12px 8px -10px #85BDD7E0;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 1.2rem;
-  transition: background-color 0.3s;
+  font-size: 1.1rem;
+  transition: transform 0.3s;
   width: 100%;
 }
 
 .submit-button:hover {
-cursor: pointer;
-transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.05); /* Reducido para móviles */
 }
 
 .submit-button:disabled {
@@ -135,6 +140,7 @@ transform: scale(1.1);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .popup.show {
@@ -147,7 +153,9 @@ transform: scale(1.1);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  width: 300px;
+  width: 90%; /* Usa porcentaje en lugar de un ancho fijo */
+  max-width: 300px;
+  margin: 0 10px;
 }
 
 .popup .popup-content.success {
@@ -159,13 +167,13 @@ transform: scale(1.1);
 }
 
 .popup .popup-content h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #333;
   margin-bottom: 10px;
 }
 
 .popup .popup-content p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #666;
 }
 
@@ -188,4 +196,34 @@ transform: scale(1.1);
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media screen and (max-width: 480px) {
+  .form-container {
+    padding: 15px;
+    border-radius: 20px;
+  }
+  
+  .form-title {
+    font-size: 16px;
+  }
+  
+  .form-label {
+    font-size: 0.9rem;
+  }
+  
+  .form-input, .form-textarea {
+    padding: 8px;
+  }
+  
+  .option-button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .submit-button {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
 }
