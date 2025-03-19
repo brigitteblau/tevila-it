@@ -31,12 +31,13 @@ export default function Home() {
   <div className="hero-content">
     <div className="sta">
       <p className="hero-description">
-      Nos encargamso de hacerle tevila a tu vajilla
+      Nos encargamos de hacerle tevila a tu vajilla
       </p>
       <p className="desp">Tu vajilla vuelve purificada</p>
+           <p className="desp">Solo traenos tu vajilla y nosotros nos encargamos.</p>
       <div className="div-button">
         <button className="button b" onClick={() => slowScroll("do-section")}>
-          Pedí tu servicio
+          Hagamos Tevila
         </button>
       </div>
     </div>
