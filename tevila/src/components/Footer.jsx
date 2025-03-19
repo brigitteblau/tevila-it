@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <hr /> 
-        <div className="footer-communities">
+        {* <{div className="footer-communities">
          
               <Link to="https://www.jabad.org" target="_blank" rel="noopener noreferrer">
                 <img src="logo-jabad.png" alt="Jabad" className="community-logo" />
@@ -17,9 +17,8 @@ const Footer = () => {
               </Link>
               <Link to="https://www.menora.org" target="_blank" rel="noopener noreferrer">
                 <img src="logo-menora.png" alt="Menora" className="community-logo" />
-              </Link>
-        
-          </div>
+              </Link> 
+          </div> *}
         <div className="footer-grid">
           <div className="footer-info">
             <div className="footer-contact">
