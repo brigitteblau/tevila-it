@@ -5,6 +5,20 @@ import "../styles/about.css";
 
 
 const About = () => {
+  const values = [
+    {
+      title: "Accesibilidad",
+      desc: "Queremos que cualquier persona pueda kasherizar su vajilla sin complicaciones, no importa dónde esté."
+    },
+    {
+      title: "Tradición",
+      desc: "Estamos comprometidos con nuestra herencia, y cada servicio que brindamos está lleno de respeto por las costumbres."
+    },
+    {
+      title: "Cercanía",
+      desc: "Nos importa ofrecer un trato cercano y personalizado, porque creemos que cada miembro de la comunidad merece atención y respeto."
+    }
+  ];
   return (
     <div className="about-us-container">
         <div className="about-tit">
@@ -33,23 +47,19 @@ const About = () => {
         </p>
       </section>
 
-      <section className="section values">
-        <h2>Valores</h2>
-        <ul>
-          <li>
-            <strong>Accesibilidad:</strong> Queremos que cualquier persona pueda kasherizar su vajilla sin complicaciones,
-            no importa dónde esté.
-          </li>
-          <li>
-            <strong>Tradición:</strong> Estamos comprometidos con nuestra herencia, y cada servicio que brindamos está
-            lleno de respeto por las costumbres.
-          </li>
-          <li>
-            <strong>Cercanía:</strong> Nos importa ofrecer un trato cercano y personalizado, porque creemos que cada miembro
-            de la comunidad merece atención y respeto.
-          </li>
-        </ul>
-      </section>
+       <section className="section values">
+      <div className="container">
+        {values.map((value, index) => (
+          <div key={index} className="card">
+            <div className="image"></div>
+            <div className="content">
+              <h3 className="title">{value.title}</h3>
+              <p className="desc">{value.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
     </div>
   );
 };

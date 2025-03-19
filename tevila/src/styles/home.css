@@ -69,7 +69,6 @@ padding: 10%;
     color: var(--button-normal);
   }
 .b:hover{
-  border: #28b5d8 solid 5px;
   background-color: white;
 }
 .scroll-arrow {
