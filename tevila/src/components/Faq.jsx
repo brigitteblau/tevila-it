@@ -14,13 +14,7 @@ function Faq() {
     <div className="faq-container">
       {data.map((category, index) => (
         <div key={index} className="faq-category">
-          <div 
-            className="faq-header" 
-            onClick={() => toggleCategory(index)}
-            role="button"
-            aria-expanded={openCategory === index}
-            aria-controls={`faq-list-${index}`}
-          >
+          <div className="faq-header" onClick={() => toggleCategory(index)}>
             <div className="faq-image-container">
               <img 
                 src={category.imagen} 
@@ -32,24 +26,19 @@ function Faq() {
                 <h2 className="faq-category-title">{category.categoria}</h2>
               </div>
               <div className="arrow-over">
-                <ChevronDown 
+              <img
+                  src="/img/down.svg"
+                  alt="arrow"
                   className={`faq-arrow ${openCategory === index ? "open" : ""}`}
-                  size={30}
-                  strokeWidth={2}
                 />
               </div>
             </div>
           </div>
-          
           {openCategory === index && (
-            <div 
-              id={`faq-list-${index}`} 
-              className="faq-list"
-              aria-labelledby={`category-${index}`}
-            >
+            <div className="faq-list">
               {category.preguntas.map((faq, idx) => (
                 <div key={idx} className="faq-item">
-                  <h3 className="faq-question">{faq.pregunta}</h3>
+                  <p className="faq-question">{faq.pregunta}</p>
                   <p className="faq-answer">{faq.respuesta}</p>
                 </div>
               ))}
