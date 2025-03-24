@@ -1,4 +1,3 @@
-
 .footer {
   color: var(--white);
   background-color: var(--blue-light);
@@ -57,15 +56,15 @@
 }
 
 .email-icon {
-  background-image: url('path/to/email-icon.svg');
+  background-image: url('../assets/icons/email-icon.svg');
 }
 
 .phone-icon {
-  background-image: url('path/to/phone-icon.svg');
+  background-image: url('../assets/icons/phone-icon.svg');
 }
 
 .location-icon {
-  background-image: url('path/to/location-icon.svg');
+  background-image: url('../assets/icons/location-icon.svg');
 }
 
 .footer-contact a {
@@ -77,27 +76,6 @@
 .footer-contact a:hover {
   text-decoration: underline;
   opacity: 0.9;
-}
-
-.footer-logos {
-  display: flex;
-
-justify-content: flex-end;
-  gap: 20px;
-
-  margin-top: 10px;
-}
-
-.community-logo {
-  width: 60px;
-  height: auto;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.9;
-}
-
-.community-logo:hover {
-  transform: scale(1.1);
-  opacity: 1;
 }
 
 .footer-bottom {
@@ -117,10 +95,6 @@ justify-content: flex-end;
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
-  .footer-logos {
-    justify-content: flex-start;
-  }
 }
 
 @media (max-width: 480px) {
@@ -135,9 +109,4 @@ justify-content: flex-end;
   .footer-contact {
     font-size: 0.9rem;
   }
-}
-.footer-communities{
-  display: flex;
-  justify-content: flex-end;
-
 }

@@ -55,9 +55,9 @@ export default function Home() {
   <About />
 </section>
 
-<section id="services-section">
+{/* <section id="services-section">
   <Review />
-</section>
+</section> */}
 
 <section id="do-section">
   <Form />

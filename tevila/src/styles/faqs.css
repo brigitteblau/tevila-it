@@ -1,107 +1,146 @@
 .faq-container {
-    width: 80%;
-  }
-  
-  .faq-category {
-    margin-bottom: 10px;
-    position: relative;
-  }
-  
-  .faq-header {
-    position: relative;
-    cursor: pointer;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  
-  .faq-image-container {
-    position: relative;
-  }
-  
-  .faq-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom-right-radius: 30px;
-    box-shadow:   0px 8px 12p rgba(0, 128, 255, 0.5);
-  }
-  
-  .faq-overlay {
-
-    background: linear-gradient(to bottom, 
-    rgba(40, 181, 216, 0.95) 0%, 
-    rgba(12, 172, 224, 0.85) 20%, 
-    rgba(16, 123, 182, 0.6) 50%, 
-    rgba(255, 255, 255, 0) 80%);
-display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
- height: 100%;
-  /*  background: rgba(0, 128, 255, 0.5); */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    ;
-  }.arrow-over {
-    position: absolute;
-    bottom: 10px; /* Ajusta según necesidad */
-    left: 50%;
-    transform: translateX(-50%); /* Centra horizontalmente */
-    width: 40px; /* Ajusta según necesidad */
-    height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
-  .faq-category-title {
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: rgb(255, 255, 255);
-    margin: 0 0 10px 0;
-    font-family: 'Recoleta', serif;
 
+.faq-category {
+  width: 100%;
+  max-width: 800px;
+  transition: all 0.3s ease;
+}
+
+.faq-header {
+  position: relative;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.faq-header:hover {
+  transform: scale(1.02);
+}
+
+.faq-image-container {
+  position: relative;
+}
+
+.faq-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0px 8px 12px rgba(0, 128, 255, 0.5);
+  object-fit: cover;
+}
+
+.faq-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 181, 216, 0.95) 0%,
+    rgba(12, 172, 224, 0.85) 20%,
+    rgba(16, 123, 182, 0.6) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.arrow-over {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-category-title {
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255);
+  margin: 0 0 10px 0;
+  font-family: 'Recoleta', serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.faq-arrow {
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.faq-arrow.open {
+  transform: rotate(180deg);
+}
+
+.faq-list {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin-top: -300px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.faq-question {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faq-answer {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .faq-category {
+    max-width: 95%;
   }
-  
-  .faq-arrow {
-    width: 30px;
-    transition: transform 0.3s ease;
-  }
-  .faq-arrow:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-  }
-  
-  .faq-arrow.open {
-    transform: rotate(180deg);
-  }
-  
+
   .faq-list {
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    margin-top: -300px; /* Esto hace que el contenido suba y se superponga con la imagen */
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .faq-item {
-    margin-bottom: 10px;
-  }
-  
-  .faq-question {
-    font-weight: bold;
-  }
-  
-  .faq-answer {
-    margin-top: 5px;
+    margin-top: -200px;
   }
 
-  @media screen and (max-width: 480px) {
-    .faq-list {
-        margin-top: -20px; /* Esto hace que el contenido suba y se superponga con la imagen */
-      }
+  .faq-category-title {
+    font-size: clamp(18px, 4vw, 24px);
   }
+}
+
+@media screen and (max-width: 480px) {
+  .faq-list {
+    margin-top: -150px;
+    padding: 15px;
+  }
+}

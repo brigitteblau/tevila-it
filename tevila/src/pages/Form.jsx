@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import '../styles/form.css';
 import Popup from '../components/PopUp';
 
-emailjs.init('ry0ptOJWBbnRMfPbF');
+emailjs.init('ry0ptOJWBtnRMfPbF');
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +24,10 @@ const Form = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    console.log('Popup state changed:', popup);
+  }, [popup]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -38,9 +42,11 @@ const Form = () => {
 
     emailjs.send('service_f82b2ev', 'template_c46c3k9', formData)
       .then(() => {
+        console.log('Email sent successfully');
+        
         setPopup({
           show: true,
-          message: `Información procesada! <br> Pronto nos estaremos comunciando asi arreglamos lo mejor para usted!`,
+          message: `Información procesada! <br> Pronto nos estaremos comunicando así arreglamos lo mejor para usted!`,
           type: 'success'
         });
   
@@ -55,12 +61,13 @@ const Form = () => {
         });
       })
       .catch((error) => {
+        console.error('Email send error:', error);
+        
         setPopup({
           show: true,
-          message: `Disculpa tuvimos un inconveniente al mandarnos sus detallles, por favor contactate via whatsapp asi podemos arreglar! br>Detalles: ${error.text}`,
+          message: `Disculpa tuvimos un inconveniente al mandarnos sus detalles, por favor contactate via whatsapp así podemos arreglar! <br>Detalles: ${error.text}`,
           type: 'error'
         });
-        console.error('Error detallado:', error);
       })
       .finally(() => {
         setIsLoading(false);
@@ -68,23 +75,22 @@ const Form = () => {
   };
 
   const closePopup = () => {
-    setPopup({ ...popup, show: false });
+    console.log('Closing popup');
+    setPopup(prev => ({ ...prev, show: false }));
   };
 
   return (
-  <div className="form-com"> 
-    <div className="form-container">
-    {/* Título llamativo */}
-    <h2 className="form-title">Completa este formulario para ponernos en contacto</h2>
-    
-    {popup.show && (
-      <Popup 
-        message={popup.message} 
-        onClose={closePopup}
-      />
-    )}
+    <div className="form-com"> 
+      <div className="form-container">
+        <h2 className="form-title">Completa este formulario para ponernos en contacto</h2>
+        
+        <Popup 
+          show={popup.show}
+          message={popup.message} 
+          onClose={closePopup}
+        />
   
-    <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label className="form-label" htmlFor="name">Nombre:</label>
         <input
@@ -163,8 +169,6 @@ const Form = () => {
           placeholder="Consulta, cantidad de vajilla, comentario, etc."
         />
       </div>
-  
-      {/* Botón Enviar */}
       <div className="submit-div">
         <button 
           className="submit-button" 
@@ -182,13 +186,9 @@ const Form = () => {
         </button>
       </div>
     </form>
-  
-   
-  </div>
-
-  </div>
+      </div>
+    </div>
   );
 };
 
 export default Form;
-
