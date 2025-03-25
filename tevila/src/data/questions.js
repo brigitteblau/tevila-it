@@ -9,7 +9,7 @@ const data = [
         },
         {
           pregunta: "¿Dónde se hace la tevila?",
-          respuesta: "La inmersión se realiza en un mikve kasher, siguiendo todas las halajot correspondientes para que puedas usar tus utensilios con tranquilidad."
+          respuesta: "La inmersión se realiza en un mikve kasher (la de yeshurun tora), siguiendo todas las halajot correspondientes para que puedas usar tus utensilios con tranquilidad."
         },
         {
           pregunta: "¿Quién se encarga de la tevila?",
@@ -59,7 +59,7 @@ const data = [
         },
         {
           pregunta: "¿Ofrecen retiro y entrega a domicilio?",
-          respuesta: "Sí, tenemos opción de retiro y entrega en algunas zonas. Consultanos al momento de hacer tu solicitud para coordinarlo."
+          respuesta: "No, usted se tiene que ocupar de que nso llegue mediante un punto de encuentro, la semana subsiguiente sus platos ya estaran listos para que los retiren ahí!. Consultanos al momento de hacer tu solicitud para coordinarlo."
         }
       ]
     }
