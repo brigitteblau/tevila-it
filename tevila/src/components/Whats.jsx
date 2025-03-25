@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 const Whats = () => {
     const handleWhatsApp = () => {
-        const phoneNumber = '5491161213881'; 
+        const phoneNumber = '5491165958082'; 
         const message = 'Hola, quiero más información.';
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
