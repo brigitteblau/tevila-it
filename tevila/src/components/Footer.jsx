@@ -15,7 +15,9 @@ const Footer = () => {
               </p>
               <p>
                 <i className="footer-icon phone-icon"></i>
-                <a href="tel:+591165958082">+549 1165 958 082</a>
+                <a href="https://wa.me/5491165958082" target="_blank" rel="noopener noreferrer">
+                  +54 9 11 65 95 80 82
+                </a>
               </p>
               <p>
                 <i className="footer-icon location-icon"></i>
@@ -24,7 +26,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <p className="footer-text">
             &copy; {new Date().getFullYear()} Tevila It. Todos los derechos reservados.

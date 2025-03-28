@@ -1,3 +1,8 @@
+:root {
+  --main-color: #ffffff;
+  --button-normal: #28b5d8;
+  --button-hover: #096f89;
+}
 
 
 
@@ -6,6 +11,7 @@
 display: flex;
 justify-content: center;
 align-items: center;
+padding: 15px 30px;
 }
 /* Estilo del contenedor del formulario */
 .form-container {
@@ -15,8 +21,8 @@ align-items: center;
   align-self: center;
   justify-self: center;
   background-color: #fff;
-  padding: 20px;
-  border-radius: 30px;
+  padding: 10% 5%;
+  border-radius: 35px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   width: 100%;
@@ -24,12 +30,22 @@ align-items: center;
 }
 
 /* Título del formulario */
-.form-title {
+/* .form-title {
   font-size: 18px;
-  color: #0076c8;
+  color: var(--primary);
   margin-bottom: 20px;
   font-weight: bold;
+} */
+.form-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background:  linear-gradient(180deg, #28B5D8 0%, #0CACE0 52%, #107BB6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
 
 /* Estilos del grupo de campos */
 .form-group {
@@ -72,7 +88,7 @@ align-items: center;
 }
 
 .option-button {
-  background: linear-gradient(45deg, #000000 0%, #707070 100%);
+  /* background: linear-gradient(45deg, #000000 0%, #707070 100%);
   color: white;
   padding: 10px 15px;
   border: none;
@@ -82,9 +98,23 @@ align-items: center;
   box-shadow: 0px 8px 8px -6px #85BDD7E0;
   font-size: 0.9rem;
   transition: all 0.3s;
-  flex: 1 0 auto; /* Permite que los botones crezcan proporcionalmente */
-  min-width: 100px; /* Establece un ancho mínimo */
-  margin-bottom: 5px;
+  flex: 1 0 auto; 
+  min-width: 100px; 
+  margin-bottom: 5px; */
+  transition: all 0.3s;
+  flex: 1 0 auto; 
+  min-width: 100px; 
+  text-align: start;
+  font-size: 16px;
+  max-width: 100%;
+  padding: 12px 25px;
+  color: var(--main-color);
+  background-color: var(--button-normal);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.31);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .option-button:hover {
@@ -101,7 +131,7 @@ align-items: center;
   width: 100%;
 }
 
-.submit-button {
+/* .submit-button {
   background: linear-gradient(80.54deg, #1089D3 0%, #12B1D1 100%);
   color: white;
   padding: 12px 20px;
@@ -112,6 +142,35 @@ align-items: center;
   font-size: 1.1rem;
   transition: transform 0.3s;
   width: 100%;
+} */
+.submit-button {
+  text-transform: uppercase;
+  font-size: 16px;
+  max-width: 100%;
+  padding: 12px 25px;
+  color: var(--main-color);
+  background-color: var(--button-normal);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.31);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  scale: 1.1;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.31);
+  background-color: var(--button-hover);
+}
+.submit-button{
+  background-color: #ffffff;
+  color: var(--button-normal);
+}
+.submit-button:hover{
+background-color: white;
 }
 
 .submit-button:hover {

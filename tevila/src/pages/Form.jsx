@@ -151,8 +151,7 @@ const Form = () => {
             className={`option-button ${formData.contactPreference === 'phone' ? 'selected' : ''}`}
             onClick={() => setFormData({ ...formData, contactPreference: 'phone' })}
             disabled={isLoading}
-          >
-            Teléfono
+          >WhatsApp
           </button>
         </div>
       </div>
