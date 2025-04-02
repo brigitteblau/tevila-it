@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Terms from "./pages/Terms";
- import Privacy from "./pages/Terms";
+ import Privacy from "./pages/Privacy";
 import ScrollToTop from "./Scroll";
 export default function AppRoutes() {
   return (
