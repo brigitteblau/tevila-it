@@ -40,7 +40,9 @@ const Form = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    emailjs.send('service_f82b2ev', 'template_c46c3k9', formData)
+    // emailjs.send('service_f82b2ev', 'template_c46c3k9', formData)'
+    emailjs.send('service_f82b2ev', 'template_c46c3k9', formData, 'ry0ptOJWBbnRMfPbF')
+
       .then(() => {
         console.log('Email sent successfully');
         
