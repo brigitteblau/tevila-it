@@ -22,12 +22,12 @@ const Footer = () => {
               <Link to="/politica-de-privacidad">Política de Privacidad</Link>
             </div>
           </div>
-          {/* <div className="footer-section">
+          <div className="footer-section">
             <h3 className="footer-section-title">Empresa</h3>
             <div className="footer-contact">
               <Link to="/ser-parte">Ser parte</Link>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="footer-bottom">
           <p className="footer-text">&copy; {new Date().getFullYear()} Tevila It. Todos los derechos reservados.</p>
