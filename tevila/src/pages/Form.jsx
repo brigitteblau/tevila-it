@@ -19,9 +19,18 @@ const Form = () => {
     pickupVajilla: '',
     message: '',
     phone: '',
-    contactPreference: 'email' , 
-    date: ''
+    date: '', 
+      logistica: 'retiro'
   });
+  const [minDate, setMinDate] = useState('');
+  useEffect(() => {
+    const hoy = new Date();
+    hoy.setDate(hoy.getDate() + 3); // suma 3 días
+  
+    const iso = hoy.toISOString().slice(0, 16); // formato YYYY-MM-DDTHH:mm
+    setMinDate(iso);
+  }, []);
+  
 
   const [popup, setPopup] = useState({
     show: false,
@@ -55,7 +64,7 @@ const Form = () => {
         goEvent();
         setPopup({
           show: true,
-          message: `Información procesada! <br> Pronto nos estaremos comunicando así arreglamos lo mejor para usted!`,
+          message: `Información procesada! <br> Ya esta todo arrelglado <br> Si cambias de opinion avisanos!`,
           type: 'success'
         });
   
@@ -84,20 +93,23 @@ const Form = () => {
   };
 
   async function goEvent() {
+    const tipo = formData.logistica === 'lleva' ? 'Entrega del cliente' : 'Retiro por Mirrow';
+  
     await fetch('https://script.google.com/macros/s/AKfycbypz73xvNudtpAw4JjyhPouN8fusa6Ee_aj9Ici_Lb9H2ntgF2JCM9aZEpLM8MhSKNY/exec', {
       method: 'POST',
-      mode: 'no-cors', 
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        titulo: `Solicitud de ${formData.name}`,
+        titulo: `${tipo} – ${formData.name}`,
         descripcion: `Tel: ${formData.phone} - Email: ${formData.email} - Comentarios: ${formData.message}`,
         inicio: formData.date,
         fin: calcularFin(formData.date)
       })
     });
   }
+  
   
   
 
@@ -163,25 +175,40 @@ const Form = () => {
       </div>
   
       <div className="form-group">
-        <label className="form-label">¿Cómo prefieres ser contactado?</label>
-        <div className="button-group">
-          <button
-            type="button"
-            className={`option-button ${formData.contactPreference === 'email' ? 'selected' : ''}`}
-            onClick={() => setFormData({ ...formData, contactPreference: 'email' })}
-            disabled={isLoading}
-          >
-            Email
-          </button>
-          <button
-            type="button"
-            className={`option-button ${formData.contactPreference === 'phone' ? 'selected' : ''}`}
-            onClick={() => setFormData({ ...formData, contactPreference: 'phone' })}
-            disabled={isLoading}
-          >WhatsApp
-          </button>
-        </div>
-      </div>
+  <label className="form-label">¿Cómo preferís entregarla?</label>
+  <div className="button-group">
+    <button
+      type="button"
+      className={`option-button ${formData.logistica === 'retiro' ? 'selected' : ''}`}
+      onClick={() => setFormData({ ...formData, logistica: 'retiro' })}
+      disabled={isLoading}
+    >
+      Que la pasemos a buscar
+    </button>
+    <button
+      type="button"
+      className={`option-button ${formData.logistica === 'lleva' ? 'selected' : ''}`}
+      onClick={() => setFormData({ ...formData, logistica: 'lleva' })}
+      disabled={isLoading}
+    >
+      Yo la llevo a Once o Palermo
+    </button>
+  </div>
+</div>
+<div className="form-group">
+  <label className="form-label" htmlFor="date">¿Cuándo podés acercarla o cuando la pasamos a buscar</label>
+  <input
+    className="form-input"
+    type="datetime-local"
+    id="date"
+    name="date"
+    value={formData.date || ''}
+    onChange={handleChange}
+    required
+    disabled={isLoading}
+    min= {minDate}
+  />
+</div>
   
       <div className="form-group">
         <label className="form-label" htmlFor="message">Detalles:</label>
@@ -195,19 +222,8 @@ const Form = () => {
           placeholder="Consulta, cantidad de vajilla, comentario, etc."
         />
       </div>
-      <div className="form-group">
-  <label className="form-label" htmlFor="date">¿Cuándo podés acercarla o cuando la pasamos a buscar</label>
-  <input
-    className="form-input"
-    type="datetime-local"
-    id="date"
-    name="date"
-    value={formData.date || ''}
-    onChange={handleChange}
-    required
-    disabled={isLoading}
-  />
-</div>
+
+  
 
       <div className="submit-div">
         <button 
