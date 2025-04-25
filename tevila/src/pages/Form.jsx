@@ -5,6 +5,12 @@ import Popup from '../components/PopUp';
 
 emailjs.init('ry0ptOJWBtnRMfPbF');
 
+function calcularFin(dateStr) {
+  const inicio = new Date(dateStr);
+  const fin = new Date(inicio.getTime() + 60 * 60 * 1000); // suma 1 hora
+  return fin.toISOString();
+}
+
 const Form = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -13,7 +19,8 @@ const Form = () => {
     pickupVajilla: '',
     message: '',
     phone: '',
-    contactPreference: 'email'
+    contactPreference: 'email' , 
+    date: ''
   });
 
   const [popup, setPopup] = useState({
@@ -45,7 +52,7 @@ const Form = () => {
 
       .then(() => {
         console.log('Email sent successfully');
-        
+        goEvent();
         setPopup({
           show: true,
           message: `Información procesada! <br> Pronto nos estaremos comunicando así arreglamos lo mejor para usted!`,
@@ -75,6 +82,23 @@ const Form = () => {
         setIsLoading(false);
       });
   };
+
+  async function goEvent() {
+    await fetch('https://script.google.com/macros/s/AKfycbypz73xvNudtpAw4JjyhPouN8fusa6Ee_aj9Ici_Lb9H2ntgF2JCM9aZEpLM8MhSKNY/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        titulo: `Solicitud de ${formData.name}`,
+        descripcion: `Tel: ${formData.phone} - Email: ${formData.email} - Comentarios: ${formData.message}`,
+        inicio: formData.date,
+        fin: calcularFin(formData.date)
+      })
+    });
+  }
+  
+  
 
   const closePopup = () => {
     console.log('Closing popup');
@@ -170,6 +194,20 @@ const Form = () => {
           placeholder="Consulta, cantidad de vajilla, comentario, etc."
         />
       </div>
+      <div className="form-group">
+  <label className="form-label" htmlFor="date">¿Cuándo podés acercarla o cuando la pasamos a buscar</label>
+  <input
+    className="form-input"
+    type="datetime-local"
+    id="date"
+    name="date"
+    value={formData.date || ''}
+    onChange={handleChange}
+    required
+    disabled={isLoading}
+  />
+</div>
+
       <div className="submit-div">
         <button 
           className="submit-button" 
