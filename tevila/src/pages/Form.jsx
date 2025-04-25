@@ -196,7 +196,7 @@ const Form = () => {
   </div>
 </div>
 <div className="form-group">
-  <label className="form-label" htmlFor="date">¿Cuándo podés acercarla o cuando la pasamos a buscar</label>
+  <label className="form-label" htmlFor="date">¿Cuándo podés acercarla o cuando la pasamos a buscar?</label>
   <input
     className="form-input"
     type="datetime-local"
