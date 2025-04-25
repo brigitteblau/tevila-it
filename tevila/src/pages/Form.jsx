@@ -86,6 +86,7 @@ const Form = () => {
   async function goEvent() {
     await fetch('https://script.google.com/macros/s/AKfycbypz73xvNudtpAw4JjyhPouN8fusa6Ee_aj9Ici_Lb9H2ntgF2JCM9aZEpLM8MhSKNY/exec', {
       method: 'POST',
+      mode: 'no-cors', 
       headers: {
         'Content-Type': 'application/json'
       },
